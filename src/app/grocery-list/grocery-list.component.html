@@ -1,0 +1,15 @@
+<div>
+    <button (click)="SortVegetable()">Vegetables</button>
+    <button (click)="sortFruit()">Fruits</button>
+    <button (click)="sortByPrice()">Sort by Price</button>
+    <button (click)="sortByName()">Sort by Name</button>
+    <button (click)="resetSortAndFilter()">Reset</button>
+  </div>
+<ul class="item-list store--item-list">
+    <li *ngFor="let grocery of filteredGroceries">
+      <div class="store--item-icon">
+        <img [src]="'assets/icons/' + grocery.id + '.svg'" [alt]="grocery.name" />
+      </div>
+      <button (click)="addToCart(grocery)">Add to cart</button>
+    </li>
+  </ul>

@@ -1,0 +1,13 @@
+<div class="cart--item-list-container">
+    <ul class="item-list cart--item-list">
+      <li *ngFor="let item of items">
+        <img class="cart--item-icon" [src]="'assets/icons/' + item.id + '.svg'" [alt]="item.name" />
+        <p>{{item.name}}</p>
+        <button class="quantity-btn remove-btn center" (click)="adjustQuantity(item, -1)">-</button>
+        <span class="quantity-text center">{{item.quantity}}</span>
+        <button class="quantity-btn add-btn center" (click)="adjustQuantity(item, 1)">+</button>
+      </li>
+    </ul>
+    <p>Total Cost: {{ getTotalCost() | currency }}</p>
+  </div>
+  
